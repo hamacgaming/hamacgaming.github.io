@@ -1,0 +1,23 @@
+{
+  "name": "bananagaming",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "clear;clear; vite --host",
+    "build": "vite build",
+    "preview": "npm run build && wrangler dev",
+    "lint": "eslint . --ext .js,.ts,.vue,.jsx,.tsx --fix",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "eslint": "^9.35.0",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "vite": "^7.1.2"
+  }
+}
