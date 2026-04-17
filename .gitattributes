@@ -6,3 +6,4 @@
 *.part3 filter=lfs diff=lfs merge=lfs -text
 *.part4 filter=lfs diff=lfs merge=lfs -text
 *.part* filter=lfs diff=lfs merge=lfs -text
+*.wasm filter=lfs diff=lfs merge=lfs -text
