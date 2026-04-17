@@ -33,6 +33,11 @@ body {
   -webkit-backdrop-filter: blur(11px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.125);
   transition: 0.3s ease;
+  position: relative;
+}
+
+.game h4 {
+  position: absolute;
 }
 
 .searchIcon {
