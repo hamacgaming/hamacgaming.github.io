@@ -20,6 +20,7 @@
       name="keywords"
       content="gaming, bananagaming, fun, free games, online games, browser games, online, browser, unblocked, school, unblocked games, unblocked school, unblocked games 66, unblocked games 77, unblocked games 24h, unblocked games 76, unblocked games 999, unblocked games 500, unblocked games 300, unblocked games 123, unblocked games 1v1lol, unblocked games 90s, unblocked games 2020, unblocked games 2021, unblocked games 2022, unblocked games 2023, unblocked games 2026, unblocked games 2024, unblocked games 2025"
     />
+    <meta name="" />
     <title>Banana Gaming</title>
     <script type="module">
       import { inject } from "@vercel/analytics";
@@ -320,6 +321,8 @@
 
             // Set the alt attribute for the logo
             gameLogo.alt = `game logo: ${element.name}`;
+
+            gameButton.rel = "nofollow";
 
             gameLogo.src = element.logoSrc;
             gameButton.className = "game";
