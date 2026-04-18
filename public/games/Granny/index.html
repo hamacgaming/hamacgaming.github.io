@@ -59,7 +59,7 @@
   </head>
   <body>
     <style>
-      .header_bananagaming {
+      .header_hamacgaming {
         position: absolute;
         height: 3em;
         width: 10em;
@@ -77,13 +77,13 @@
         z-index: 100000000000;
       }
 
-      .header_bananagaming:hover {
+      .header_hamacgaming:hover {
         background-color: #3a3a3a;
         color: white;
       }
     </style>
     <a
-      class="header_bananagaming"
+      class="header_hamacgaming"
       href="https://hamacgaming.github.io"
     >
       back to home
@@ -94,7 +94,7 @@
         tabindex="-1"
       ></canvas>
       <div id="loading-ui">
-        <div id="status-text">thanks to bog, bananagaming</div>
+        <div id="status-text">thanks to bog, hamacgaming</div>
         <div id="bar-container"><div id="bar-fill"></div></div>
       </div>
       <div id="unity-warning"></div>
@@ -124,7 +124,7 @@
         frameworkUrl: buildUrl + "/GrannyBog.framework.js",
         codeUrl: "",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "bananaGaming",
+        companyName: "hamacgaming",
         productName: "Granny",
         productVersion: "1.0",
       };
@@ -139,7 +139,7 @@
           script.onload = () => {
             createUnityInstance(canvas, config, (progress) => {
               barFill.style.width = 100 * progress + "%";
-              statusText.textContent = "Thanks to bog, this is on bananagaming";
+              statusText.textContent = "Thanks to bog, this is on hamacgaming";
             })
               .then(() => {
                 loadingUI.style.display = "none";

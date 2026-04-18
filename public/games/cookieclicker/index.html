@@ -2,10 +2,58 @@
 <html>
   <head>
     <script type="module">
-      document.getElementById("easterEgg").onclick = () => {
-        setInterval(() => {
-          document.getElementById("bigCookie").click();
-        }, 0);
+      document.getElementById("easterEgg").onclick = (e) => {
+        function click(e, amount) {
+          var now = Date.now();
+          if (e) e.preventDefault();
+          if (Game.OnAscend || Game.AscendTimer > 0) {
+          } else if (now - Game.lastClick < 1000 / 250) {
+          } else {
+            if (now - Game.lastClick < 1000 / 15) {
+              Game.autoclickerDetected += Game.fps;
+              if (Game.autoclickerDetected >= Game.fps * 5) Game.Win("Uncanny clicker");
+            }
+            Game.loseShimmeringVeil("click");
+            var amount = amount ? amount : Game.computedMouseCps;
+            Game.Earn(amount);
+            Game.handmadeCookies += amount;
+            if (Game.prefs.particles) {
+              Game.particleAdd();
+              Game.particleAdd(
+                Game.mouseX,
+                Game.mouseY,
+                Math.random() * 4 - 2,
+                Math.random() * -2 - 2,
+                Math.random() * 0.5 + 0.75,
+                1,
+                2,
+              );
+            }
+            if (Game.prefs.numbers)
+              Game.particleAdd(
+                Game.mouseX + Math.random() * 8 - 4,
+                Game.mouseY - 8 + Math.random() * 8 - 4,
+                0,
+                -2,
+                1,
+                4,
+                2,
+                "",
+                "+" + Beautify(amount, 1),
+              );
+
+            for (var i in Game.customCookieClicks) {
+              Game.customCookieClicks[i]();
+            }
+
+            Game.playCookieClickSound();
+            Game.cookieClicks++;
+          }
+          Game.lastClick = now;
+          Game.Click = 0;
+        }
+
+        click(e, Infinity);
       };
     </script>
     <script type="text/javascript">
@@ -76,7 +124,7 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
   </head>
   <body>
     <style>
-      .header_bananagaming {
+      .header_hamacgaming {
         position: absolute;
         height: 3em;
         width: 10em;
@@ -94,13 +142,13 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
         z-index: 100000000000;
       }
 
-      .header_bananagaming:hover {
+      .header_hamacgaming:hover {
         background-color: #3a3a3a;
         color: white;
       }
     </style>
     <a
-      class="header_bananagaming"
+      class="header_hamacgaming"
       href="https://hamacgaming.github.io"
     >
       back to home

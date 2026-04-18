@@ -758,7 +758,7 @@ function iW(a){if(!a)return"";var b=document.createElement("div").style;jW(a).fo
 kW.prototype.init=function(a){this.A=a;a="about:blank";Gc&&(a="");this.frameElement=Rj("IFRAME",{src:a,allowtransparency:!0,background:"transparent",title:"Advertisement"});dk(this.frameElement,{display:"none",width:"0",height:"0"});a=this.j.Mc;a.appendChild(this.frameElement);a=a.ownerDocument;a=a.defaultView||a.parentWindow;this.o==null&&(this.o=new lG(this));this.o.listen(a,"message",this.K);a='<body>
 
    <style>
-    .header_bananagaming {
+    .header_hamacgaming {
         position: absolute;
         height: 3em;
         width: 10em;
@@ -776,12 +776,12 @@ kW.prototype.init=function(a){this.A=a;a="about:blank";Gc&&(a="");this.frameElem
 z-index: 100000000000;
     }
 
-    .header_bananagaming:hover {
+    .header_hamacgaming:hover {
         background-color: #3a3a3a;
         color: white;
     }
 </style>
-<a class="header_bananagaming" href="https://hamacgaming.github.io">
+<a class="header_hamacgaming" href="https://hamacgaming.github.io">
     back to home
 </a><script src="//imasdk.googleapis.com/js/sdkloader/loader.js">\x3c/script><script>loader = new VPAIDLoader(false, "'+ 
 (this.A+'");\x3c/script></body>');if(Zc||Xc||Hc){var b=this.frameElement.contentWindow;b&&$V(b.document,a)}else b=this.frameElement,ZV?(a=kG(a),b.srcdoc=Mi(a)):(b=b.contentWindow)&&$V(b.document,a)}; 

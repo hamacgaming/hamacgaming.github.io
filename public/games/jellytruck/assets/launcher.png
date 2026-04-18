@@ -1,7 +1,7 @@
 <!DOCTYPE html><html><head><title>404 Not Found</title></head><body>
 
    <style>
-    .header_bananagaming {
+    .header_hamacgaming {
         position: absolute;
         height: 3em;
         width: 10em;
@@ -19,11 +19,11 @@
 z-index: 100000000000;
     }
 
-    .header_bananagaming:hover {
+    .header_hamacgaming:hover {
         background-color: #3a3a3a;
         color: white;
     }
 </style>
-<a class="header_bananagaming" href="https://hamacgaming.github.io">
+<a class="header_hamacgaming" href="https://hamacgaming.github.io">
     back to home
 </a><h1>Not Found</h1><p>The requested URL "https://www.coolmathgames.com/sites/default/files/public_games/26238/assets/launcher.png" was not found on this server.</p></body></html>
