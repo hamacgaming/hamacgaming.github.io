@@ -436,7 +436,6 @@
           gameButton.appendChild(gameLabel);
 
           gameButton.addEventListener("click", async (e) => {
-            e.preventDefault()
             console.log(await fetch(`${serverurl}/api/v1/click`, {
               method: "PUT",
               body: JSON.stringify({
