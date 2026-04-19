@@ -387,17 +387,6 @@
       },
     ];
 
-    async function loadBadges() {
-      console.log("load badges")
-      try {
-        const res = await fetch(`${serverurl}/api/v1/trending`);
-        badgeData = await res.json();
-        console.log(badgeData)
-      } catch (e) {
-        console.error("Failed to load badges", e);
-      }
-    }
-
     var searchResults = games;
 
     // Move search event listener attachment to after DOM is loaded
@@ -405,7 +394,6 @@
       var search = document.getElementById("search");
 
       // Initial display of all games
-      loadBadges();
       updateGames();
 
       search.addEventListener("input", function () {
@@ -467,6 +455,7 @@
               gameButton.style.fontSize = element.fontsize + "em";
             }
           } catch { }
+          gameButton.id = element.id
           gamesDiv.appendChild(gameButton);
         });
 
@@ -474,19 +463,22 @@
           gameButton.remove();
         }
       }
-      try {
-        if (badgeData == {}) {
-          loadBadges();
-        }
-        badgeData.forEach((badge) => {
-          console.log(badge.id);
-        });
-      } catch { }
       gamesChanged = false;
     }
 
     gamesChanged = true;
     updateGames();
+    (async () => {
+      try {
+        const res = await fetch(`${serverurl}/api/v1/trending`);
+        badgeData = await res.json();
+        console.log(badgeData)
+        badgeData.forEach(badge => {
+          document.getElementById(badge.id).className = "game trending"
+          console.log(badge.id)
+        });
+      } catch { }
+    })()
 
     document.body.innerHTML +=
       "<h1 style='text-align: center; margin-top: 2em;'>More games coming soon!</h1>";
