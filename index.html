@@ -26,7 +26,7 @@
   <meta name="keywords"
     content="gaming, hamacgaming, fun, free games, online games, browser games, online, browser, unblocked, school, unblocked games, unblocked school, unblocked games 66, unblocked games 77, unblocked games 24h, unblocked games 76, unblocked games 999, unblocked games 500, unblocked games 300, unblocked games 123, unblocked games 1v1lol, unblocked games 90s, unblocked games 2020, unblocked games 2021, unblocked games 2022, unblocked games 2023, unblocked games 2026, unblocked games 2024, unblocked games 2025" />
   <meta name="" />
-  <title>hamacgaming</title>
+  <title>hamacgaming | play free games online | unblocked | fun to play | 46+ games</title>
   <link rel="stylesheet" crossorigin href="/style.css" />
   <meta name="description"
     content="Play free online games at hamacgaming! Enjoy a variety of fun and exciting games directly in your browser. No downloads required!" />
@@ -365,6 +365,20 @@
         id: "cuphead",
       },
       {
+        name: "Flappy bird",
+        path: "./games/flappy/index.html",
+        logoSrc: "./games/flappy/logo.webp",
+        keywords: [],
+        id: "flappy",
+      },
+      {
+        name: "Celeste",
+        path: "./games/celeste/index.html",
+        logoSrc: "./games/celeste/logo.webp",
+        keywords: [],
+        id: "celeste",
+      },
+      {
         name: "World's hardest game",
         path: "./games/hardestgame/index.html",
         logoSrc: "./games/hardestgame/logo.jpg",
@@ -374,9 +388,11 @@
     ];
 
     async function loadBadges() {
+      console.log("load badges")
       try {
         const res = await fetch(`${serverurl}/api/v1/trending`);
         badgeData = await res.json();
+        console.log(badgeData)
       } catch (e) {
         console.error("Failed to load badges", e);
       }
@@ -389,6 +405,7 @@
       var search = document.getElementById("search");
 
       // Initial display of all games
+      loadBadges();
       updateGames();
 
       search.addEventListener("input", function () {
@@ -461,13 +478,9 @@
         if (badgeData == {}) {
           loadBadges();
         }
-        if (badgeData) {
-          badgeData.forEach((badge) => {
-            console.error(badge.id);
-          });
-        } else {
-          console.log("no badgeData");
-        }
+        badgeData.forEach((badge) => {
+          console.log(badge.id);
+        });
       } catch { }
       gamesChanged = false;
     }
