@@ -455,7 +455,7 @@
 
         gamesChanged = true
         if (gamesChanged) {
-          searchResults.sort((a, b) => a.name.localeCompare(b.name)
+          searchResults.sort((a, b) => a.name.localeCompare(b.name))
           const gamesDiv = document.getElementById("games")
           gamesDiv.innerHTML = ""
 
@@ -480,7 +480,6 @@
             gameButton.appendChild(gameLogo)
             gameButton.appendChild(gameLabel)
 
-            
             try {
               if (element.fontsize) {
                 gameButton.style.fontSize = element.fontsize + "em"
@@ -499,17 +498,6 @@
 
       gamesChanged = true
       updateGames()
-      ;(async () => {
-        try {
-          const res = await fetch(`${serverurl}/api/v1/trending`)
-          badgeData = await res.json()
-          console.log(badgeData)
-          badgeData.forEach((badge) => {
-            document.getElementById(badge.id).className = "game trending"
-            console.log(badge.id)
-          })
-        } catch {}
-      })()
 
       document.body.innerHTML +=
         "<h1 style='text-align: center; margin-top: 2em;'>More games coming soon!</h1>"
