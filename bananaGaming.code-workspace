@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "bananaGaming",
+			"path": "."
+		},
+		{
+			"name": "bananaGamingBackend",
+			"path": "../bananaGamingBackend"
+		}
+	],
+	"settings": {}
+}
