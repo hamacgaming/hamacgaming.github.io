@@ -20,9 +20,6 @@
 			
 			const origFetch = window.fetch;
 			window.fetch = async function (resource, options) {
-				if (resource.includes(".wasm.part")) {
-					return origFetch(resource, options);
-				}
 				if (typeof resource === "string") {
 					const key = resource.split("/").pop();
 					if (mergedMap[key]) {
@@ -53,7 +50,7 @@
 			};
 
 			const canvas = document.querySelector("#unity-canvas");
-			const loaderUrl = "Build/81bbae32c7a77bc49304934b19e72883.loader.js";
+			const loaderUrl = "Build/dae5c7bd2b15915f51ae4e56b8f5367d.loader.js";
 			const config = {
 				dataUrl: "Build/7fb5141de5923189bc1dc5f94eb619f2.wasm",
 				frameworkUrl: "Build/c699bc4c24abfbdb4c8b3e15b0af7d3f.framework.js",
