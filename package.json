@@ -12,7 +12,6 @@
     "mkcert": "mkcert"
   },
   "dependencies": {
-    "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "@vitejs/plugin-basic-ssl": "^2.3.0",
     "@vitejs/plugin-vue": "^6.0.5",
