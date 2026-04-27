@@ -5,5 +5,4 @@ export default defineConfig({
   server: {
     historyApiFallback: false,
   },
-  appType: "mpa", // Disables fallback to index.html
 })
