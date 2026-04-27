@@ -315,7 +315,7 @@ var Module = {
     canvas.addEventListener(
       "webglcontextlost",
       function (e) {
-        document.location.reload()
+        alert("WebGL context lost. You will need to reload the page.")
         e.preventDefault()
       },
       false,

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "clear;clear; vite --host",
-    "build": "vite build",
+    "build": "vite build && cp dist/index.html dist/404.html",
     "preview": "npm run build && wrangler dev",
     "lint": "eslint . --ext .js,.ts,.vue,.jsx,.tsx --fix",
     "deploy": "npm run build && wrangler deploy",
